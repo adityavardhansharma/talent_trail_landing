@@ -36,7 +36,7 @@ const features = [
     description:
       "Practice interviews with our AI-powered system and receive instant feedback to improve your interview skills.",
     href: "https://talenttrailsmock.vercel.app/",
-    comingSoon: true,
+    
   },
 ]
 
