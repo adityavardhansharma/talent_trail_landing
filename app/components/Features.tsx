@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { FileText, BookOpen, Video, Sparkles } from "lucide-react"
+import { FileText, BookOpen, Video, Sparkles, BookMarked } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 
@@ -35,8 +35,14 @@ const features = [
     title: "AI Mock Interviews",
     description:
       "Practice interviews with our AI-powered system and receive instant feedback to improve your interview skills.",
-    href: "https://talenttrailsmock.vercel.app/",
-    
+    href: "https://passwordgameavs.netlify.app/",
+    comingSoon: true,
+  },
+  {
+    icon: <BookMarked className="w-12 h-12 text-[#1363DF] opacity-50" />,
+    title: "Make your own AI courses",
+    description: "Create personalized AI courses tailored to your learning needs and goals.",
+    comingSoon: true,
   },
 ]
 
@@ -132,7 +138,7 @@ export default function Features() {
         <h2 className="text-4xl font-bold text-center mb-12 text-[#06283D]">
           Powerful <span className="text-gradient">AI Features</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
