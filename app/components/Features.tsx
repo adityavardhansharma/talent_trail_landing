@@ -35,14 +35,15 @@ const features = [
     title: "AI Mock Interviews",
     description:
       "Practice interviews with our AI-powered system and receive instant feedback to improve your interview skills.",
-    href: "https://passwordgameavs.netlify.app/",
-    comingSoon: true,
+    href: "https://talenttrailsmock.vercel.app/",
+    
   },
   {
     icon: <BookMarked className="w-12 h-12 text-[#1363DF] opacity-50" />,
     title: "Make your own AI courses",
     description: "Create personalized AI courses tailored to your learning needs and goals.",
-    comingSoon: true,
+    href: "https://talenttraillms.vercel.app/",
+    
   },
 ]
 
