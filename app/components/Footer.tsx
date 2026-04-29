@@ -36,7 +36,7 @@ export default function Footer() {
                 Start building your next career move with TalentTrail.
               </h3>
               <p className="mt-3 text-white/80 max-w-xl">
-                Pick any tool above and launch it in seconds. No setup, no clutter — just polished AI made for you.
+                Pick any tool above and launch it in seconds. No setup, no clutter — just polished TrailBot AI made for you.
               </p>
             </div>
             <Link
@@ -61,7 +61,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-[#06283D]/70 max-w-xs leading-relaxed">
-              An AI-powered career toolkit crafted as a 7th semester minor project — designed for ambitious learners.
+              TrailBot AI by TalentTrail — a polished career toolkit crafted as a 7th semester minor project, built for ambitious learners.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function Footer() {
                 ['Note Analyzer', 'https://talenttrailprep.netlify.app'],
                 ['Quiz Generator', 'https://talenttrailsquiz.vercel.app/'],
                 ['Mock Interviews', 'https://talenttrailsmock.vercel.app/'],
-                ['AI Courses', 'https://talenttraillms.vercel.app/'],
+                ['Build AI Courses', 'https://talenttraillms.vercel.app/'],
               ].map(([label, href]) => (
                 <li key={label}>
                   <Link
@@ -125,7 +125,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#06283D]/60">
           <p>© {new Date().getFullYear()} TalentTrail — 7th Semester Minor Project</p>
           <p className="flex items-center gap-2">
-            Crafted with care · <span className="text-gradient font-semibold">AI for everyone</span>
+            Crafted with care · <span className="text-gradient font-semibold">TrailBot AI</span>
           </p>
         </div>
       </div>

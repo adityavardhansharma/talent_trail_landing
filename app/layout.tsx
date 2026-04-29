@@ -2,9 +2,9 @@ import "./globals.css"
 import type { ReactNode } from "react"
 
 export const metadata = {
-  title: "TalentTrail — AI-Powered Career Tools",
+  title: "TalentTrail — TrailBot AI Career Tools",
   description:
-    "Unlock your potential with TalentTrail's cutting-edge AI tools for resume matching, study assistance, mock interviews, and more.",
+    "TrailBot AI by TalentTrail — a polished AI workspace for resume matching, study notes, quizzes, mock interviews, and personalized AI courses.",
   generator: "v0.dev",
 }
 

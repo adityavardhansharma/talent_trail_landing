@@ -11,8 +11,6 @@ import {
   BookOpen,
   Video,
   BookMarked,
-  ShieldCheck,
-  Star,
 } from 'lucide-react'
 
 export default function Hero() {
@@ -22,29 +20,43 @@ export default function Hero() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
       tl.from('.hero-eyebrow', { y: 16, opacity: 0, duration: 0.6 })
-        .from('.hero-headline > span', {
-          y: 24,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.08,
-        }, '-=0.3')
+        .from(
+          '.hero-headline > span',
+          {
+            y: 24,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.08,
+          },
+          '-=0.3',
+        )
         .from('.hero-sub', { y: 16, opacity: 0, duration: 0.6 }, '-=0.4')
-        .from('.hero-cta > *', { y: 14, opacity: 0, duration: 0.5, stagger: 0.08 }, '-=0.3')
-        .from('.hero-trust', { y: 10, opacity: 0, duration: 0.5 }, '-=0.2')
-        .from('.hero-visual', {
-          y: 40,
-          opacity: 0,
-          duration: 1,
-          ease: 'power3.out',
-        }, '-=0.8')
-        .from('.float-card', {
-          opacity: 0,
-          y: 20,
-          stagger: 0.12,
-          duration: 0.6,
-        }, '-=0.6')
+        .from(
+          '.hero-cta > *',
+          { y: 14, opacity: 0, duration: 0.5, stagger: 0.08 },
+          '-=0.3',
+        )
+        .from(
+          '.hero-visual',
+          {
+            y: 40,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+          },
+          '-=0.6',
+        )
+        .from(
+          '.float-card',
+          {
+            opacity: 0,
+            y: 20,
+            stagger: 0.12,
+            duration: 0.6,
+          },
+          '-=0.6',
+        )
 
-      // Subtle parallax on visual
       const visual = heroRef.current?.querySelector('.hero-visual') as HTMLElement | null
       if (visual) {
         gsap.to(visual, {
@@ -61,82 +73,45 @@ export default function Hero() {
   }, [])
 
   return (
-    <section ref={heroRef} className="relative pt-36 pb-24 px-4 overflow-hidden">
+    <section ref={heroRef} className="relative pt-36 pb-20 px-4 overflow-hidden">
       <div className="container mx-auto relative">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
-          {/* Left content */}
           <div className="lg:col-span-7">
             <span className="hero-eyebrow eyebrow">
               <span className="ping" />
-              <span>New • AI-powered career toolkit</span>
+              <span>Meet TrailBot AI · by TalentTrail</span>
             </span>
 
             <h1 className="hero-headline mt-6 text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-[#06283D]">
               <span className="block">Land your next</span>
               <span className="block">
                 role with{' '}
-                <span className="text-gradient">AI-powered</span>
+                <span className="text-gradient">TrailBot&nbsp;AI</span>
               </span>
-              <span className="block">career tools.</span>
+              <span className="block">— your career copilot.</span>
             </h1>
 
             <p className="hero-sub mt-6 text-lg md:text-xl text-[#06283D]/70 max-w-xl leading-relaxed">
               Match resumes to roles, study smarter, ace mock interviews, and build your own
-              AI courses — all in one polished workspace built for ambitious learners.
+              AI courses — all in one polished workspace, powered by TrailBot AI.
             </p>
 
-            <div className="hero-cta mt-8 flex flex-wrap items-center gap-3">
+            <div className="hero-cta mt-9 flex flex-wrap items-center gap-3">
               <Link href="#features" className="btn-primary">
                 Explore the toolkit
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="#how" className="btn-secondary">
+              <Link href="#features" className="btn-secondary">
                 <PlayCircle className="w-5 h-5 text-[#1363DF]" />
-                See how it works
+                See the tools
               </Link>
-            </div>
-
-            {/* Trust band */}
-            <div className="hero-trust mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-[#06283D]/70">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[
-                    'from-[#1363DF] to-[#47B5FF]',
-                    'from-[#47B5FF] to-[#7CC4FA]',
-                    'from-[#06283D] to-[#1363DF]',
-                  ].map((g, i) => (
-                    <div
-                      key={i}
-                      className={`w-7 h-7 rounded-full bg-gradient-to-br ${g} ring-2 ring-white`}
-                    />
-                  ))}
-                </div>
-                <span className="font-medium">
-                  Loved by <span className="text-[#06283D] font-semibold">10k+</span> students
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#F5B301] text-[#F5B301]" />
-                  ))}
-                </div>
-                <span className="font-medium">4.9/5 average rating</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#1363DF]" />
-                <span className="font-medium">Privacy-first by design</span>
-              </div>
             </div>
           </div>
 
-          {/* Right visual */}
           <div className="lg:col-span-5 relative">
             <div className="hero-visual relative mx-auto w-full max-w-md">
-              {/* Glow */}
               <div className="absolute -inset-10 rounded-[40px] bg-gradient-to-tr from-[#47B5FF]/30 via-[#1363DF]/20 to-transparent blur-2xl" />
 
-              {/* Main panel */}
               <div className="relative glass-strong card-shadow rounded-3xl p-6 border border-white/70">
                 <div className="flex items-center gap-2 mb-5">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#FF6058]" />
@@ -154,10 +129,10 @@ export default function Hero() {
                     </div>
                     <div>
                       <div className="text-sm font-semibold text-[#06283D]">
-                        AI Career Copilot
+                        TrailBot AI
                       </div>
                       <div className="text-xs text-[#06283D]/60">
-                        Personalized for you
+                        by TalentTrail · personalized for you
                       </div>
                     </div>
                   </div>
@@ -194,14 +169,13 @@ export default function Hero() {
                 </div>
 
                 <div className="mt-5 flex items-center justify-between text-xs text-[#06283D]/60">
-                  <span>Powered by AI</span>
+                  <span>Powered by TrailBot AI</span>
                   <span className="inline-flex items-center gap-1 text-[#1363DF] font-semibold">
                     Live <span className="w-1.5 h-1.5 rounded-full bg-[#1363DF] animate-pulse" />
                   </span>
                 </div>
               </div>
 
-              {/* Floating mini cards */}
               <div className="float-card absolute -left-6 top-10 glass-strong card-shadow rounded-2xl px-4 py-3 flex items-center gap-3">
                 <div className="w-9 h-9 rounded-lg bg-[#EAF3FF] flex items-center justify-center">
                   <FileText className="w-5 h-5 text-[#1363DF]" />
@@ -245,33 +219,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Logo marquee */}
-      <div id="how" className="relative mt-24">
-        <div className="text-center text-xs uppercase tracking-[0.2em] font-semibold text-[#06283D]/50 mb-6">
-          Built with cutting-edge tools
-        </div>
-        <div className="overflow-hidden mask-fade">
-          <div className="marquee text-[#06283D]/50 font-semibold text-lg">
-            {Array.from({ length: 2 }).map((_, k) => (
-              <div key={k} className="flex items-center gap-12">
-                {['Next.js', 'GSAP', 'Tailwind', 'OpenAI', 'Gemini', 'Vercel', 'TypeScript', 'Lucide'].map((n) => (
-                  <span key={n} className="opacity-80 hover:opacity-100 transition-opacity">
-                    {n}
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <style jsx>{`
-        .mask-fade {
-          mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-          -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-        }
-      `}</style>
     </section>
   )
 }
